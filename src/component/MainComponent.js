@@ -6,23 +6,39 @@ import Feed from './FeedComponent';
 import Footer from './FooterComponent';
 import {Switch , Redirect , Route} from 'react-router-dom';
 import { PLAYERS } from '../shared/players';
+import { NEWS } from '../shared/news';
+import News from './NewsDetailComponent';
+import {COMMENTS} from '../shared/comments';
 class Main extends Component
 {
     constructor(props)
     {
         super(props);
         this.state = {
-            players:PLAYERS
+            players:PLAYERS,
+            news : NEWS,
+            comments:COMMENTS
         }
     }
     render()
     {
+        const NewsWithId = ({match}) =>
+        {
+            console.log("ID:-"+match.params.newsId+"\n News:-"+this.state.news.id);
+            return(
+                <News 
+                news={this.state.news.filter((news)=> news.id === parseInt(match.params.newsId,10))[0]} 
+                comments={this.state.comments.filter((comment)=> comment.newsId === parseInt(match.params.newsId,10))}
+                />
+            );
+        }
         return(
             <div>
                 <Header />
                     <Switch>
                         <Route path="/home" component={Home} />
-                        <Route path='/feed' component={Feed} />
+                        <Route exact path='/feed' component={() => <Feed news={this.state.news}/>} />
+                        <Route path='/news/:newsId' component={NewsWithId} />
                         <Route exact path='/players' component ={()=><Players players={this.state.players} />} />
                         <Redirect to='/home' />
                     </Switch>

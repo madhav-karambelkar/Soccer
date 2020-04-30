@@ -5,7 +5,7 @@ function RenderPlayers({players ,onClick})
     return(
         <Card> 
                 <CardHeader>{players.name}</CardHeader>
-                <CardImg width="100%" src={players.image} alt={players.name} />
+                <CardImg width="100%"  src={players.image} alt={players.name} />
                 <CardBody>
                     <CardText>{players.description}</CardText>
                 </CardBody>
