@@ -22,8 +22,37 @@ class Header extends Component
     {
         return(
             <div>
-                Header...
-                </div>
+                <Navbar dark expand="md">
+                    <div className="container">
+                        <NavbarToggler onClick={this.toggleNav} />
+                        <NavbarBrand className="mr-auto" href="/">
+                            <img src="assets/images/logo.jpg" height="30" width="40" alt="Scoccer" />
+                        </NavbarBrand>
+                        <Collapse isOpen={this.state.isNavOpen} navbar>
+                            <Nav navbar>
+                                <NavItem >
+                                    <NavLink className="nav-link"  to='/home'>
+                                        <span className="fa fa-home fa-lg"></span>
+                                         Home
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="nav-link" to='/feed'>
+                                        <span className="fa fa-newspaper-o fa-lg"></span>
+                                        Feed
+                                    </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="nav-link" to='/players'>
+                                        <span className="fa fa-trophy fa-lg"></span>
+                                        Players
+                                    </NavLink>
+                                </NavItem>
+                            </Nav>
+                        </Collapse>
+                    </div>
+                </Navbar>
+            </div>
         );
     }
 }

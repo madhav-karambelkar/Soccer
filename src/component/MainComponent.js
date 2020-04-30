@@ -5,11 +5,15 @@ import Home from './HomeComponent';
 import Feed from './FeedComponent';
 import Footer from './FooterComponent';
 import {Switch , Redirect , Route} from 'react-router-dom';
+import { PLAYERS } from '../shared/players';
 class Main extends Component
 {
     constructor(props)
     {
         super(props);
+        this.state = {
+            players:PLAYERS
+        }
     }
     render()
     {
@@ -19,7 +23,7 @@ class Main extends Component
                     <Switch>
                         <Route path="/home" component={Home} />
                         <Route path='/feed' component={Feed} />
-                        <Route path='/players' component ={Players} />
+                        <Route exact path='/players' component ={()=><Players players={this.state.players} />} />
                         <Redirect to='/home' />
                     </Switch>
                 <Footer />
