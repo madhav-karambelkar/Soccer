@@ -23,7 +23,12 @@ address{
   margin:0px;
   color:whitesmoke;
 }
-
+.homeHead
+{
+  text-align: center;
+  margin-top: 19px;
+  margin-bottom: -29px;
+}
 .backcl
 {
   background-color: #cccccc;

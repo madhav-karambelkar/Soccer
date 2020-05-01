@@ -1,11 +1,11 @@
-import React , { Component } from "react";
-import {Card ,CardHeader,CardImg,CardImgOverlay,CardTitle, CardBody, CardText} from 'reactstrap';
+import React  from "react";
+import {Card ,CardHeader,CardImg, CardBody, CardText} from 'reactstrap';
 function RenderPlayers({players ,onClick})
 {
     return(
         <Card> 
                 <CardHeader>{players.name}</CardHeader>
-                <CardImg width="100%"  src={players.image} alt={players.name} />
+                <CardImg width="100%" src={players.image} alt={players.name} />
                 <CardBody>
                     <CardText>{players.description}</CardText>
                 </CardBody>

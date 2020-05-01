@@ -18,7 +18,7 @@ export const NEWS =
     },
     {
         id:2,
-        title:'BCB wont'+'t rule out Sri Lanka tour just yet',
+        title:'BCB won`t rule out Sri Lanka tour just yet',
         uploader:'Atif Azam',
         date: '2015-02-13T17:57:28.556094Z',
         image:'/assets/images/BCB.webp',

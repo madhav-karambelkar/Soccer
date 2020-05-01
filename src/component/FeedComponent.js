@@ -1,4 +1,4 @@
-import React , { Component } from "react";
+import React  from "react";
 import {Media} from 'reactstrap';
 import {Link} from 'react-router-dom';
 function RenderNews({news})

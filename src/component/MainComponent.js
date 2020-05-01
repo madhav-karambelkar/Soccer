@@ -9,6 +9,7 @@ import { PLAYERS } from '../shared/players';
 import { NEWS } from '../shared/news';
 import News from './NewsDetailComponent';
 import {COMMENTS} from '../shared/comments';
+import {SOCCER , CaroDetail} from '../shared/homeInfo';
 class Main extends Component
 {
     constructor(props)
@@ -17,7 +18,9 @@ class Main extends Component
         this.state = {
             players:PLAYERS,
             news : NEWS,
-            comments:COMMENTS
+            comments:COMMENTS,
+            soccerInfo : SOCCER,
+            caros : CaroDetail
         }
     }
     render()
@@ -36,7 +39,7 @@ class Main extends Component
             <div>
                 <Header />
                     <Switch>
-                        <Route path="/home" component={Home} />
+                        <Route path="/home" component={()=> <Home soccers={this.state.soccerInfo} caros={this.state.caros} />} />
                         <Route exact path='/feed' component={() => <Feed news={this.state.news}/>} />
                         <Route path='/news/:newsId' component={NewsWithId} />
                         <Route exact path='/players' component ={()=><Players players={this.state.players} />} />
